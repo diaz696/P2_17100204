@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Formulario Discos</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        <center><h1>Tienda de música</h1>
+        </center> <br>
+
+        <div class="card">
+          <div class="card-block">
+            <div class="d-flex justify-content-center">
+        <form  method="POST" action="#">
+            <div class="form-group">
+              <label for="nomdisc"><i class="material-icons">recent_actors</i> Nombre de disco</label>
+              <input type="text" class="form-control" id="nomdisc" name="nomdisc">
+            </div> <br>
+            <div class="form-group">
+              <label for="artista"><i class="material-icons">music_note</i> Nombre de artista o grupo</label>
+              <input type="text" class="form-control" id="artista" name="artista">
+            </div> <br>
+            <select class="custom-select">
+              <option selected="">Género</option>
+              <option value="1">Rock</option>
+              <option value="2">Pop</option>
+              <option value="3">K-pop</option>
+            </select> <br> 
+            <br>
+            <div class="form-group">
+              <label for="anio"><i class="material-icons">calendar_today</i> Año</label>
+              <input type="text" class="form-control" id="anio" name="anio">
+            </div> <br>
+            <div class="form-group">
+              <label for="sku"><i class="material-icons">speaker_notes</i> SKU</label>
+              <input type="text" class="form-control" id="sku" name="sku">
+            </div> <br>
+            <div class="form-group">
+              <label for="tracklist"><i class="material-icons">queue_music</i> Track List</label><br>
+              <textarea type="text" class="form-control" id="tracklist" name="tracklist"></textarea>
+            </div> <br>
+            <button type="button" class="btn btn-primary btn-lg btn-block"><i class="material-icons">save_alt</i> Agregar</button>
+          </form>
+        </div>
+        </div>
+      </div>
+
+      <style>
+        body { background: rgb(182, 200, 204); }
+      </style>
+    
+    </body>
+</html>
