@@ -5,37 +5,42 @@
         <link rel="stylesheet" href="Formulario.css">
     </head>
     <body>
-        <form class="formulario" method="POST" action="#">
-            <div >
+        <center><h1>Tienda de música</h1>
+        </center> <br>
+        
+      <div id="formulario">
+        <form  method="POST" action="#">
+            <div>
               <label for="nomdisc">Nombre de disco</label>
-              <input type="text" class="form-control" id="nomdisc" name="">
-            </div>
+              <input type="text" id="nomdisc" name="nomdisc">
+            </div> <br>
             <div >
-              <label for="nomdisc">Nombre de artista o grupo</label>
-              <input type="text" class="form-control" id="nomdisc" name="">
-            </div>
+              <label for="artista">Nombre de artista o grupo</label>
+              <input type="text" id="artista" name="artista">
+            </div> <br>
             <div >
               <label for="genero">Género</label>
-              <input type="text" class="form-control" id="genero" name="">
-            </div><!---Hacer lista despegable-->
+              <input type="text" id="genero" name="genero">
+            </div> <br>
             <div >
               <label for="anio">Año</label>
-              <input type="text" class="form-control" id="anio" name="">
-            </div>
-            <div ></div>
+              <input type="text" id="anio" name="anio">
+            </div> <br>
+            <div >
               <label for="sku">SKU</label>
-              <input type="text" class="form-control" id="sku" name="">
-            </div>
+              <input type="text" id="sku" name="sku">
+            </div> <br>
             <div>
               <label for="tracklist">Track List</label><br>
-              <textarea type="text" class="form-control" id="tracklist" name=""></textarea>
-            </div>
+              <textarea type="text" id="tracklist" name="tracklist"></textarea>
+            </div> <br>
              <!--  <div class="">
                 <input type="checkbox" class="form-check-input" id="oferta" onchange="checkIfOferta();">
                 <label class="form-check-label" for="dropdownCheck2"> ¿Oferta? </label>
               </div> -->
             <button type="submit" class="botonagregar">Agregar</button>
           </form>
+        </div>
 
     
     </body>
