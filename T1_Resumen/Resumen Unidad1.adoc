@@ -1,0 +1,155 @@
+= Resumen de Unidad 1
+
+== Modelos de cajas
+
+Un documento HTML, en pocas palabras, se compone de cajas, y dentro de estas cajas va toda la información, imagenes o lo que queramos poner en su interior. A su vez, estas cajas tienen sus propiedades, con las cuales podemos jugar con ellas para darle estilo a nuestro documento. 
+
+Nuestra caja principal o central se llama *content*, esta contiene un *padding*, que es como un margen hacia el interior de la caja principal. Fuera de esta caja se encuentra el *border* y después podemos encontrar la caja llamada *margin*.
+
+También contamos con algo llamado *outline*, lo cual la podemos tratar como si fuera un contorno alrededor de un elemento, mostrándose alrededor del margen.
+
+Imagen de referencia: 
+
+image::https://www.creatuwebnicaragua.com/wp-content/uploads/2015/08/modelo-de-caja.gif[Modelo de cajas]
+
+Existen dos propiedades principales en nuestras cajas, las cuales son "widh" y "height", que su traducción al español sería "ancho" y "alto" de nuestras cajas.
+
+=== Propiedad display
+
+Practicamente es la propiedad más importante para controlar estructuras. Normalmente, para cada elemento, virne por defecto que su valor dea _block_ (de bloque) o _inline_ (en línea).
+
+.Valores de la propiedad display
+|===
+|*Valor* | *Significado*
+| *block* | Provoca que el elemento se exteinda a sus lados tanto como se pueda.
+| *inline* | No interrumpe el flujo.
+| *none* | Oculta o muestra  elementos sin eliminarlos ni recrearlos.
+|===
+
+=== Box-sizing
+
+Esta propiedad calculo el ancho y alto total de un elemento.
+
+* *content-box*: viene por defecto. La caja del contenido del elemento modificará su ancho o alto, añadiendose a al ancho o alto final desplegado.
+
+* *border-box*: este incluye los valores de cualquier borde o relleno que se añada, y provoca que la caja de contenido se encoja para absorber lo extra que sobre. 
+
+== Flujo del documento
+
+En nuestro documento pueden existir dos tipos de elementos, el flujo es la manera de cómo estos se muestran.
+
+* *Elementos de bloque*: Cada elemento comienza en una nueva línea, su flujo es de arriba hacia abajo.
+
+** El _ancho_ será todo el disponible del contenedor padre
+** El _alto_ es definido por su contenido.
+
+* *Elemento de línea*: Es colocado en línea hasta que se le acabe el espacio de sus anchos. Su fujo es de izquierda a derecha.
+
+** El _ancho_ y _alto_ es definido por el contenido.
+
+Dentro del flujo, cada elemento recibe su espacio y este es respetado por los demás elementos. Los elementos fluera del flujo son idependientes y su espacio no es respetado, esto sucede cuando un elemento en flotante o en posicionamiento absoluto.
+
+== Tipos de Posicionamiento
+
+* *Static*: Valor por defecto, como dice su nombre, su comportamiento ene l flujo será normal, estático.
+
+* *Relative*: Refetente a la posición original del elemento en el flujo. Su espacio queda reservado.
+
+* *Absolute*: Referente a su contenedor padre o depende del navegador. No reserva espacio.
+
+* *Fixed*: No reserva espacio en el flujo del documento, su punto de referencia es el navegador.
+
+* *Sticky*: Es un tipo de conbinación con static y fixed. Al inicio se comporta como estático, pero después cambia a comportarse como fixed.
+
+== Unidades de medida en CSS
+
+Existen varios tipos de unidades, pero principalmente sólo usamos dos tipos, las *absolutas* y las *relativas*.
+
+* *Absolutas*
+** *cm* centímetro
+** *mm* milímetro
+** *in* pulgada
+
+* *Relativas*
+** *px* pixel
+** *%* porcentaje
+
+* *Relativas a la fuente*
+** *em* tamaño de la funete
+** *rem* tamaño de la fuente de raíz
+** *ex* aprox. la mitad del tamaño de la fuente (altura de la letra x)
+** *ch* el ancho del caracter cero
+
+== Selectores
+
+.Selectores Básicos
+|===
+| Selector | Descripción | Selección 
+| * | Universal | Todos los elementos 
+| h1 | Etiqueta | Todas las etiquetas h1
+| #id | Identificador | Elemento que tenga asigado el id
+| .class | Clase | Todos los elementos que tengan asignada la clase .class
+|===
+
+.Selectores relacionales 
+|===
+|Selector | Descripción | Selección
+| elem1 elem2 | Descendiente | Todos los elementos elem2 que esten dentro de elem1
+| elem1 > elem2 | Descendiente directo | Todos los elem2 que sean hijos directos de elem1
+| elem1 + elem2 | Hermano adyacente | Elem2 que sea hermano y este inmediatamente después de elem1
+| elem1 ~ elem2 | Hermano general | Todos los elem2 que sean hermanos de elem1
+|===
+
+=== Pseudoselectores
+
+Son palabras clave que pueden acompañar a un selector, se refieren a ubicaciones y partes de un elemento y los diferentes estados que puede tener.
+Estos mismos, se dividen en dos grupos: los _pseudo elementos_ y las _pseudo clases_.
+
+==== Pseudo elementos
+Selecciona sólo algunas partes de un elemento.
+
+|===
+|Pseudo elemento | Selección
+| ::first-letter | Primera letra de un elemento de bloque
+| ::first-line | Primera línea de un elemento de bloque
+| ::before | Ubicación que está antes de un elemento
+| ::after | Ubicación que está después de un elemento
+|===
+
+==== Pseudo clases
+Son utilizados para especificar diferentes estados. Si los elementos a los que se aplican dichos selectores cumplen con las condiciones o estados, se aplican los estilos.
+
+|===
+|Pseudo clase | Selección
+| :hover | Elemento cuando el usuario pasa el ratón soble él
+| :first-child | El primer hijo del elemento seleccionado
+| :checked | Si el elemento checkbox, radio button y opción esté seleccionado
+| :lang(en) | Los elementos que estén en el lenguaje especificado
+|===
+
+== Cascada
+
+Se refiere a las declaraciones de estilo que pueden estar en uno o  varios sitios. A veces los estilos pueden entrar en _conflicto_, es por eso que se viene a ayudar. 
+
+
+. Importancia: origen, dónde está ubicado el estilo
+. Especificidad: Peso del selector
+. Orden: Última guerra declarada "gana" y sobre.escribe a la anterior.
+
+=== Especificidad
+
+Es la manera de la cual el navegador decide qué valor de alguna propiedad de nuestro CSS es más relevante para el elemento. Esto se da cuando el nivel de _importancia_ entra en conflicto.
+
+==== Cálculo
+
+Se cálcula por peso. Cada tipo de selector tiene un determinado valor. Cuando varias declaraciones tengan la misma especificidad, paseremo sa veficicar por medio del _orden_.
+
+.Jerarquía de especificidad
+|===
+|Jerarquía | Selector | Especificidad
+| 0 | * (Universal) | 0
+| 1 | Elemento, pseudo elemento | 1
+| 2 | Clase, pseudo clase, atributo | 10 
+| 3 | Id | 100
+| 4 | Etiqueta html | 1000
+|===
